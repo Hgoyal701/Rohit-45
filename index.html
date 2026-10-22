@@ -1,18 +1,206 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#080d18" />
-    <meta name="description" content="Explore Rohit Sharma's cricket career, records, achievements and legacy." />
-    <title>ROHIT SHARMA — THE HITMAN</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROHIT SHARMA | The Hitman</title>
+<meta name="description" content="Explore Rohit Sharma's cricket career, achievements, records and legendary moments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--panel:#101827;--blue:#3185ff;--gold:#ffc857;--muted:#9aa9c0;--white:#f4f7ff}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:#080d17ee;border-bottom:1px solid #ffffff12;position:sticky;top:0;z-index:10;backdrop-filter:blur(15px)}
+.logo{font:900 27px 'Barlow Condensed',sans-serif;letter-spacing:2px}.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:27px;font-size:12px;font-weight:700;letter-spacing:1px;color:#c4cce0}
+.navlinks a:hover{color:var(--gold)}
+.hero{min-height:620px;position:relative;overflow:hidden;display:flex;align-items:center;padding:80px 9%;background:radial-gradient(ellipse at 80% 45%,#123d7a 0,transparent 35%),linear-gradient(110deg,#080d17 35%,#10213d 75%,#101729)}
+.hero:after{content:"HITMAN";position:absolute;right:-30px;bottom:-65px;font:900 clamp(100px,20vw,280px)/1 'Barlow Condensed';color:#ffffff08;pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:4px;font-weight:800;margin-bottom:20px}
+h1{font:900 clamp(64px,10vw,120px)/.88 'Barlow Condensed',sans-serif;letter-spacing:-2px;margin-bottom:25px}
+h1 span{display:block;color:var(--blue);text-shadow:0 0 45px #3185ff44}
+.hero p{max-width:510px;color:#b6c3d9;font-size:15px;margin-bottom:28px}
+.btn{display:inline-block;padding:13px 22px;background:var(--blue);color:white;font-weight:800;font-size:12px;letter-spacing:1px;border-radius:3px;transition:.2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px #3185ff55}
+.btn.secondary{background:transparent;border:1px solid #ffffff50;margin-left:8px}
+.hero-tag{margin-top:38px;color:#8796b0;font-size:11px;letter-spacing:2px}
+.hero-tag b{color:var(--gold)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);background:#0d1422;border-block:1px solid #ffffff12;padding:24px 7%}
+.strip div{text-align:center;border-right:1px solid #ffffff15}.strip div:last-child{border:0}
+.strip strong{display:block;font:800 34px 'Barlow Condensed';color:var(--gold)}
+.strip small{color:var(--muted);font-size:10px;letter-spacing:1.4px}
+section{padding:88px 8%;scroll-margin-top:70px}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:35px}
+.kicker{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:3px}
+h2{font:800 clamp(37px,5vw,57px)/1.05 'Barlow Condensed';margin-top:8px}
+.sub{color:var(--muted);font-size:13px;max-width:390px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:linear-gradient(145deg,#121d30,#0c1320);border:1px solid #ffffff12;padding:25px;border-radius:8px;transition:.25s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-5px);border-color:#3185ff80}
+.card:before{content:"";position:absolute;top:0;left:0;width:35px;height:3px;background:var(--blue)}
+.card .number{font:800 37px 'Barlow Condensed';color:var(--gold);margin-bottom:8px}
+.card h3{font-size:15px;margin-bottom:8px}
+.card p{font-size:12px;color:var(--muted)}
+.dark-section{background:#0b111e;border-block:1px solid #ffffff0c}
+.tabs{display:flex;gap:8px;margin-bottom:23px;flex-wrap:wrap}
+.tab{background:#141e30;color:#aebbd0;border:1px solid #ffffff16;padding:10px 20px;cursor:pointer;font-weight:800;font-size:11px;border-radius:4px}
+.tab.active,.tab:hover{background:var(--blue);color:white}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{background:#111c2d;padding:22px;border-radius:5px;border-bottom:2px solid #3185ff}
+.stat span{display:block;font-size:10px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
+.stat strong{display:block;font:800 35px 'Barlow Condensed';margin-top:5px}
+.note{font-size:11px;color:var(--muted);margin-top:17px}
+.trophy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.trophy{display:flex;gap:18px;align-items:center;padding:24px;background:#111a2a;border:1px solid #ffffff10;border-radius:7px}
+.trophy-icon{font-size:36px}
+.trophy h3{font-size:14px}.trophy p{font-size:12px;color:var(--muted)}
+.timeline{border-left:2px solid #3185ff66;margin:15px 0 0 10px;padding-left:27px}
+.event{position:relative;margin-bottom:26px}
+.event:before{content:"";position:absolute;left:-35px;top:7px;width:13px;height:13px;background:var(--gold);border-radius:50%;box-shadow:0 0 15px #ffc85755}
+.event b{color:var(--gold);font-size:12px;letter-spacing:1px}
+.event h3{font-size:16px;margin:3px 0}
+.event p{font-size:12px;color:var(--muted)}
+.quote{background:linear-gradient(110deg,#10264a,#111827);padding:45px;border-left:3px solid var(--gold);border-radius:5px}
+.quote p{font:600 clamp(23px,3vw,35px)/1.3 'Barlow Condensed'}
+.quote span{display:block;color:var(--gold);font-size:10px;letter-spacing:2px;margin-top:17px}
+footer{padding:30px 8%;border-top:1px solid #ffffff12;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+footer b{color:var(--gold)}
+@media(max-width:700px){nav{padding:0 5%;height:65px}.navlinks{gap:12px;font-size:10px}.navlinks a:nth-child(2){display:none}.logo{font-size:22px}.hero{min-height:560px;padding:70px 7%}.strip{padding:18px 3%;grid-template-columns:repeat(2,1fr);gap:20px}.strip div:nth-child(2){border:0}.grid{grid-template-columns:1fr}.trophy-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}section{padding:65px 6%}.section-top{display:block}.sub{margin-top:14px}.quote{padding:28px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#home">ROHIT<span>.</span>SHARMA</a>
+  <div class="navlinks">
+    <a href="#career">CAREER</a>
+    <a href="#stats">STATS</a>
+    <a href="#trophies">TROPHIES</a>
+    <a href="#legacy">LEGACY</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">INDIAN CRICKET • A LEGENDARY JOURNEY</div>
+    <h1>THE HITMAN<span>ROHIT SHARMA</span></h1>
+    <p>Timing. Elegance. Destruction. Celebrating the career of one of cricket's most remarkable batters, known for record-breaking innings and leadership on the biggest stage.</p>
+    <a class="btn" href="#career">EXPLORE HIS JOURNEY ↘</a>
+    <a class="btn secondary" href="#stats">CAREER STATS</a>
+    <div class="hero-tag">CALM MIND. <b>BIG IMPACT.</b> TIMELESS CRICKET.</div>
+  </div>
+</header>
+
+<div class="strip">
+  <div><strong>264</strong><small>HIGHEST ODI SCORE</small></div>
+  <div><strong>3×</strong><small>ODI DOUBLE CENTURIES</small></div>
+  <div><strong>5</strong><small>IPL TITLES AS CAPTAIN</small></div>
+  <div><strong>2024</strong><small>T20 WORLD CHAMPION</small></div>
+</div>
+
+<section id="career">
+  <div class="section-top">
+    <div><div class="kicker">01 / THE JOURNEY</div><h2>A CAREER BUILT ON GREATNESS</h2></div>
+    <p class="sub">From a talented youngster to a leader who delivered on cricket's grandest stages.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="number">2007</div><h3>THE INTERNATIONAL DEBUT</h3><p>Made his international debut for India and began a journey that would redefine his career.</p></article>
+    <article class="card"><div class="number">2013</div><h3>THE OPENING REVOLUTION</h3><p>Moved to the top of the ODI order and began producing monumental innings with remarkable consistency.</p></article>
+    <article class="card"><div class="number">2019</div><h3>FIVE WORLD CUP CENTURIES</h3><p>Scored five centuries at the 2019 ODI World Cup, setting a tournament record.</p></article>
+    <article class="card"><div class="number">2020</div><h3>THE RAJIV GANDHI KHEL RATNA</h3><p>Received India's highest sporting honour, recognising his exceptional contribution to cricket.</p></article>
+    <article class="card"><div class="number">2023</div><h3>WORLD CUP LEADERSHIP</h3><p>Led India to the 2023 ODI World Cup final with an aggressive, attacking approach.</p></article>
+    <article class="card"><div class="number">2024</div><h3>WORLD CHAMPION CAPTAIN</h3><p>Captained India to the ICC Men's T20 World Cup title in Barbados.</p></article>
+  </div>
+</section>
+
+<section class="dark-section" id="stats">
+  <div class="section-top">
+    <div><div class="kicker">02 / THE NUMBERS</div><h2>CAREER STATISTICS</h2></div>
+    <p class="sub">Explore formats and discover the numbers behind the Hitman's impact.</p>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-format="odi">ODI</button>
+    <button class="tab" data-format="test">TEST</button>
+    <button class="tab" data-format="t20">T20 INTERNATIONAL</button>
+    <button class="tab" data-format="ipl">IPL</button>
+  </div>
+  <div class="stats-grid" id="statsGrid"></div>
+  <p class="note">Statistics are approximate reference figures and may change. Verify the latest totals with official cricket records before publication.</p>
+</section>
+
+<section id="trophies">
+  <div class="section-top">
+    <div><div class="kicker">03 / THE SILVERWARE</div><h2>TROPHIES & HONOURS</h2></div>
+    <p class="sub">A collection of milestones from international cricket and the IPL.</p>
+  </div>
+  <div class="trophy-grid">
+    <article class="trophy"><div class="trophy-icon">🏆</div><div><h3>ICC MEN'S T20 WORLD CUP</h3><p>2024 · India captain</p></div></article>
+    <article class="trophy"><div class="trophy-icon">🌍</div><div><h3>ICC CHAMPIONS TROPHY</h3><p>2013 · India squad</p></div></article>
+    <article class="trophy"><div class="trophy-icon">🥇</div><div><h3>ASIA CUP</h3><p>Multiple titles with India</p></div></article>
+    <article class="trophy"><div class="trophy-icon">🔵</div><div><h3>IPL CHAMPION</h3><p>Five titles as Mumbai Indians captain</p></div></article>
+    <article class="trophy"><div class="trophy-icon">🎖️</div><div><h3>ARJUNA AWARD</h3><p>2015 · Sporting honour</p></div></article>
+    <article class="trophy"><div class="trophy-icon">⭐</div><div><h3>MAJOR DHYAN CHAND KHEL RATNA</h3><p>2020 · India's highest sporting honour at the time</p></div></article>
+  </div>
+</section>
+
+<section class="dark-section" id="legacy">
+  <div class="section-top">
+    <div><div class="kicker">04 / THE LEGACY</div><h2>MOMENTS THAT MADE HISTORY</h2></div>
+  </div>
+  <div class="timeline">
+    <div class="event"><b>2007</b><h3>First steps in international cricket</h3><p>Rohit began his senior international journey with India.</p></div>
+    <div class="event"><b>2013</b><h3>A new era at the top of the order</h3><p>His move to open in ODIs unlocked a remarkable run of big scores.</p></div>
+    <div class="event"><b>2014</b><h3>264 — an ODI world record</h3><p>Scored 264 against Sri Lanka, the highest individual score in men's ODI cricket.</p></div>
+    <div class="event"><b>2019</b><h3>Five centuries at one World Cup</h3><p>Delivered a historic run of centuries at the ICC Men's Cricket World Cup.</p></div>
+    <div class="event"><b>2023</b><h3>A fearless World Cup campaign</h3><p>Led India's attacking batting style throughout the ODI World Cup.</p></div>
+    <div class="event"><b>2024</b><h3>Champions of the world</h3><p>India won the ICC Men's T20 World Cup under his captaincy.</p></div>
+  </div>
+  <div class="quote" style="margin-top:55px">
+    <p>“Greatness isn't just about the runs you score. It's about the moments you create.”</p>
+    <span>THE HITMAN MINDSET · FAN-MADE QUOTE, NOT A ROHIT SHARMA QUOTE</span>
+  </div>
+</section>
+
+<footer>
+  <span><b>ROHIT SHARMA</b> · A FAN-MADE CRICKET TRIBUTE</span>
+  <span>Made for cricket fans · Not an official website</span>
+</footer>
+
+<script>
+const data={
+  odi:[
+    ["Matches","273"],["Runs","11,168"],["Batting average","48.76"],
+    ["Centuries","32"],["Half-centuries","58"],["Highest score","264"]
+  ],
+  test:[
+    ["Matches","67"],["Runs","4,301"],["Batting average","40.57"],
+    ["Centuries","12"],["Half-centuries","18"],["Highest score","212"]
+  ],
+  t20:[
+    ["Matches","159"],["Runs","4,231"],["Batting average","32.05"],
+    ["Centuries","5"],["Half-centuries","32"],["Highest score","121*"]
+  ],
+  ipl:[
+    ["IPL seasons","Update"],["IPL matches","Verify"],["IPL runs","Verify"],
+    ["IPL centuries","Verify"],["IPL fifties","Verify"],["IPL titles as captain","5"]
+  ]
+};
+const grid=document.getElementById("statsGrid");
+function render(format){
+  grid.innerHTML=data[format].map(item=>
+    `<div class="stat"><span>${item[0]}</span><strong>${item[1]}</strong></div>`
+  ).join("");
+  document.querySelectorAll(".tab").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.format===format);
+  });
+}
+document.querySelectorAll(".tab").forEach(btn=>{
+  btn.addEventListener("click",()=>render(btn.dataset.format));
+});
+render("odi");
+</script>
+</body>
 </html>
