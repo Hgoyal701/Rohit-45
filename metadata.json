@@ -1,0 +1,12 @@
+
+{
+  "name": "Rohit Sharma — The Hitman",
+  "description": "A premium fan-made cricket website featuring Rohit Sharma's career, achievements and statistics.",
+  "version": "1.0.0",
+  "theme": {
+    "background": "#080d18",
+    "primary": "#287bff",
+    "accent": "#ff783f"
+  },
+  "stack": ["Vite", "JavaScript", "CSS"]
+}
